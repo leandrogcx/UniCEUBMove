@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+
+    <title>Escolher Perfil</title>
+
+    <!-- Referenciando o AngularJS. -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <!-- jQuery necessario para os plugins ''Javascript Bootstrap'' -->
+        <script src="js/jquery-1.11.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    <!-- Indica ao navegador que o width da meta tag viewport é o tamanho da largura do dispositivo! Para zoom responsivo. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Referenciando o Bootstrap e o CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" id="menu" role="navigation">
+        <div class="container">
+            <div class="navbar-header">          
+
+                <img alt src="imagens/letreiroblack.png" id="logotipo">
+
+                <a class="navbar-brand" href="index.html">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>               
+            </div>               
+        </div>
+    </div>
+
+    <h2><b>Seja bem-vindo(a)!</b></h2><br>
+    
+    <img src="imagens/user.png" alt="user" class="img-rounded">
+
+    <hr width="250"> <!-- Insere uma linha para organizar a tela. -->
+    Selecione a opção desejada:<br><br>
+
+    <form>
+        <a href="homePassageiro.html"><span class="btn btn-lg btn-danger"><b>SOLICITAR</b></span></a>
+        <br><i>Perfil de Passageiro</i>
+
+        <br><br>
+
+        <a href="homeMotorista.html"><span class="btn btn-lg btn-danger"><b>OFERECER</b></span></a>
+        <br><i>Perfil de Motorista</i>
+
+    </form><br>
+
+    <hr width="250"> <!-- Segunda linha para organizar a tela. -->
+
+    <!-- Bootstrap Popover Javascript -->
+
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+
+    <!-- Bootstrap Popover -->
+
+    <span class="btn btn-lg btn-primary" data-toggle="popover" data-placement="top"
+          title="- Escolher Perfil -"
+          data-content="Escolha SOLICITAR, caso queira usufruir de caronas disponíveis oferecidas pelos Motoristas,
+          ou escolha OFERECER, caso queira oferecer uma vaga a outros alunos, 
+          professores ou demais funcionários do UniCEUB!">
+        <span class="glyphicon glyphicon-question-sign"></span>
+    </span>
+
+</body>
+</html>

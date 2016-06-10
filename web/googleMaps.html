@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geolocalização - Move</title>
+        
+        <!-- Referenciando o AngularJS. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        
+        <!-- jQuery necessario para os plugins ''Javascript Bootstrap'' -->
+        <script src="js/jquery-1.11.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <!-- Indica ao navegador que o width da meta tag viewport é o tamanho da largura do dispositivo! Para zoom responsivo. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Referenciando o Bootstrap e o CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+        <script type="text/css"></script>
+
+        <style>
+            #mapa {
+                width: auto;
+                height: 600px;
+            }
+
+        </style>
+    </head>
+    <body>
+        
+        <!-- Tag nav insere uma barra fixada no topo -->
+        <nav id="barratopo" class="navbar navbar-default navbar-fixed-top">
+        <img alt src="imagens/uniceubmove.png" id="logo"> <b>GEOLOCALIZAÇÃO</b>
+        <div class="container">
+        </div>
+        </nav>
+
+        
+        <!-- MAPA -->
+        
+        <div id="mapa"></div>
+        <script>
+            var infoWindow = new google.maps.InfoWindow();
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(mostrarMapa, erro);
+            }
+            else {
+                alert('Opa! Não há suporte à Geolocalização.');
+            }
+
+            function erro(err) {
+                var mensagem = "";
+                switch (err.code) {
+                    case 1:
+                        mensagem = "Permissão negada!";
+                        break;
+                    case 2:
+                        mensagem = "Conexão mal sucedida!";
+                        break;
+                    case 3:
+                        mensagem = "Tempo esgotado!";
+                        break;
+                    default:
+                        mensagem = "Não foi possível mostrar o mapa!";
+                }
+                alert(mensagem + ". O código do erro é " + err.code);
+                //não foi possível mostrar o mapa
+            }
+
+            function mostrarMapa(position) {
+                var mapa = document.getElementById("mapa");
+                mapa.style.display = "block";
+
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                var opcoes = {
+                    zoom: 16,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+                var maps = new google.maps.Map(document.getElementById("mapa"), opcoes);
+                var minhaposicao = new google.maps.LatLng(latitude, longitude);
+                maps.setCenter(minhaposicao);
+                infoWindow.setContent("Você está aqui!");
+                infoWindow.setPosition(minhaposicao);
+                infoWindow.open(maps);
+            }
+        </script>
+    </body>
+</html>

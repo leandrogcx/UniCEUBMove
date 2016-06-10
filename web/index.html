@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>UniCEUB Move - A sua carona</title>
+        
+        <!-- Referenciando o AngularJS. -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        
+        <!-- jQuery necessario para os plugins ''Javascript Bootstrap'' -->
+        <script src="js/jquery-1.11.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        
+        <!-- Indica ao navegador que o width da meta tag viewport é o tamanho da largura do dispositivo! Para zoom responsivo. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Referenciando o Bootstrap e o CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    </head>
+        
+        <body>
+        
+        <!-- Tag nav insere uma barra fixada no topo -->
+        <nav id="barratopo" class="navbar navbar-default navbar-fixed-top">
+        <img alt src="imagens/uniceubmove.png" id="logo"> <b>A sua carona!</b>
+        <div class="container">
+        </div>
+        </nav>
+            
+        <br><br><br><hr width="250"> <!-- Insere uma linha para organizar a tela. -->
+        
+        <form action="escolherPerfil.html">
+            <input type="text" class="input input-lg" placeholder="Registro Acadêmico (RA)" required autofocus><br><br> <!-- "Required Autofocus": Preencha este campo. -->
+            <input type="password" class="input input-lg" placeholder="Senha" required><br><br>                     <!-- "Required": Obrigatório. -->
+                
+            <button class="btn btn-lg btn-danger" type="submit"><b>ENTRAR NO MOVE</b></button>
+            
+        </form>
+        
+        <hr width="250"><br> <!-- Segunda linha para organizar a tela. -->
+        
+        <p id="rodape"> Caso tenha esquecido seus dados de acesso,<br> solicite-os pelo Espaço Aluno.</p>
+        
+    </body>
+</html>
